@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/template_rail_on_raised_sw",
+  "textures": {
+    "rail": "malachite-addons:block/copper_rail_on"
+  }
+}
