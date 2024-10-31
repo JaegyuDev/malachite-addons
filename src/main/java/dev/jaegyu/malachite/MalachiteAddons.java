@@ -1,6 +1,6 @@
 package dev.jaegyu.malachite;
 
-import dev.jaegyu.malachite.Block.CopperRail;
+import dev.jaegyu.malachite.block.CopperRail;
 import net.fabricmc.api.ModInitializer;
 
 import net.minecraft.block.Block;
@@ -14,13 +14,13 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class MalachiteAddons implements ModInitializer {
-    public static final Logger LOGGER = LoggerFactory.getLogger("malachite-addons");
 	public static final String MOD_ID = "malachite-addons";
-
+    public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
+	public static final Block COPPER_RAIL = new CopperRail(
+			Block.Settings.copy(Blocks.POWERED_RAIL));
+	public static final Item COPPER_RAIL_ITEM = new BlockItem(COPPER_RAIL, new Item.Settings());
 	@Override
 	public void onInitialize() {
-		final Block COPPER_RAIL = new CopperRail(Block.Settings.copy(Blocks.POWERED_RAIL));
-		final Item COPPER_RAIL_ITEM = new BlockItem(COPPER_RAIL, new Item.Settings());
 		LOGGER.info("Hello Fabric world!");
 
 		// Register our new rail
